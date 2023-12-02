@@ -14,6 +14,221 @@ CREATE DATABASE db_rental
 
 COMMENT ON DATABASE db_rental
     IS 'rental app development project ';
+
+
+----Script for Sequence-------------
+-- SEQUENCE: public.tbl_house_mate_housemate_id_seq
+
+-- DROP SEQUENCE IF EXISTS public.tbl_house_mate_housemate_id_seq;
+
+CREATE SEQUENCE IF NOT EXISTS public.tbl_house_mate_housemate_id_seq
+    INCREMENT 1
+    START 1
+    MINVALUE 1
+    MAXVALUE 2147483647
+    CACHE 1
+    OWNED BY tbl_house_mate.housemate_id;
+
+ALTER SEQUENCE public.tbl_house_mate_housemate_id_seq
+    OWNER TO postgres;
+
+-- SEQUENCE: public.tbl_house_mate_user_id_seq
+
+-- DROP SEQUENCE IF EXISTS public.tbl_house_mate_user_id_seq;
+
+CREATE SEQUENCE IF NOT EXISTS public.tbl_house_mate_user_id_seq
+    INCREMENT 1
+    START 1
+    MINVALUE 1
+    MAXVALUE 2147483647
+    CACHE 1
+    OWNED BY tbl_house_mate.user_id;
+
+ALTER SEQUENCE public.tbl_house_mate_user_id_seq
+    OWNER TO postgres;
+
+-- SEQUENCE: public.tbl_maintenance_issue_id_seq
+
+-- DROP SEQUENCE IF EXISTS public.tbl_maintenance_issue_id_seq;
+
+CREATE SEQUENCE IF NOT EXISTS public.tbl_maintenance_issue_id_seq
+    INCREMENT 1
+    START 1
+    MINVALUE 1
+    MAXVALUE 2147483647
+    CACHE 1
+    OWNED BY tbl_maintenance.issue_id;
+
+ALTER SEQUENCE public.tbl_maintenance_issue_id_seq
+    OWNER TO postgres;
+
+-- SEQUENCE: public.tbl_maintenance_property_id_seq
+
+-- DROP SEQUENCE IF EXISTS public.tbl_maintenance_property_id_seq;
+
+CREATE SEQUENCE IF NOT EXISTS public.tbl_maintenance_property_id_seq
+    INCREMENT 1
+    START 1
+    MINVALUE 1
+    MAXVALUE 2147483647
+    CACHE 1
+    OWNED BY tbl_maintenance.property_id;
+
+ALTER SEQUENCE public.tbl_maintenance_property_id_seq
+    OWNER TO postgres;
+
+-- SEQUENCE: public.tbl_property_property_id_seq
+
+-- DROP SEQUENCE IF EXISTS public.tbl_property_property_id_seq;
+
+CREATE SEQUENCE IF NOT EXISTS public.tbl_property_property_id_seq
+    INCREMENT 1
+    START 1
+    MINVALUE 1
+    MAXVALUE 2147483647
+    CACHE 1
+    OWNED BY tbl_property.property_id;
+
+ALTER SEQUENCE public.tbl_property_property_id_seq
+    OWNER TO postgres;
+
+-- SEQUENCE: public.tbl_property_user_id_seq
+
+-- DROP SEQUENCE IF EXISTS public.tbl_property_user_id_seq;
+
+CREATE SEQUENCE IF NOT EXISTS public.tbl_property_user_id_seq
+    INCREMENT 1
+    START 1
+    MINVALUE 1
+    MAXVALUE 2147483647
+    CACHE 1
+    OWNED BY tbl_property.user_id;
+
+ALTER SEQUENCE public.tbl_property_user_id_seq
+    OWNER TO postgres;
+
+-- SEQUENCE: public.tbl_rental_agreement_agreement_id_seq
+
+-- DROP SEQUENCE IF EXISTS public.tbl_rental_agreement_agreement_id_seq;
+
+CREATE SEQUENCE IF NOT EXISTS public.tbl_rental_agreement_agreement_id_seq
+    INCREMENT 1
+    START 1
+    MINVALUE 1
+    MAXVALUE 2147483647
+    CACHE 1
+    OWNED BY tbl_rental_agreement.agreement_id;
+
+ALTER SEQUENCE public.tbl_rental_agreement_agreement_id_seq
+    OWNER TO postgres;
+
+-- SEQUENCE: public.tbl_rental_agreement_property_id_seq
+
+-- DROP SEQUENCE IF EXISTS public.tbl_rental_agreement_property_id_seq;
+
+CREATE SEQUENCE IF NOT EXISTS public.tbl_rental_agreement_property_id_seq
+    INCREMENT 1
+    START 1
+    MINVALUE 1
+    MAXVALUE 2147483647
+    CACHE 1
+    OWNED BY tbl_rental_agreement.property_id;
+
+ALTER SEQUENCE public.tbl_rental_agreement_property_id_seq
+    OWNER TO postgres;
+
+-- SEQUENCE: public.tbl_rental_agreement_user_id_seq
+
+-- DROP SEQUENCE IF EXISTS public.tbl_rental_agreement_user_id_seq;
+
+CREATE SEQUENCE IF NOT EXISTS public.tbl_rental_agreement_user_id_seq
+    INCREMENT 1
+    START 1
+    MINVALUE 1
+    MAXVALUE 2147483647
+    CACHE 1
+    OWNED BY tbl_rental_agreement.user_id;
+
+ALTER SEQUENCE public.tbl_rental_agreement_user_id_seq
+    OWNER TO postgres;
+
+-- SEQUENCE: public.tbl_support_support_id_seq
+
+-- DROP SEQUENCE IF EXISTS public.tbl_support_support_id_seq;
+
+CREATE SEQUENCE IF NOT EXISTS public.tbl_support_support_id_seq
+    INCREMENT 1
+    START 1
+    MINVALUE 1
+    MAXVALUE 2147483647
+    CACHE 1
+    OWNED BY tbl_support.support_id;
+
+ALTER SEQUENCE public.tbl_support_support_id_seq
+    OWNER TO postgres;
+
+-- SEQUENCE: public.tbl_support_user_id_seq
+
+-- DROP SEQUENCE IF EXISTS public.tbl_support_user_id_seq;
+
+CREATE SEQUENCE IF NOT EXISTS public.tbl_support_user_id_seq
+    INCREMENT 1
+    START 1
+    MINVALUE 1
+    MAXVALUE 2147483647
+    CACHE 1
+    OWNED BY tbl_support.user_id;
+
+ALTER SEQUENCE public.tbl_support_user_id_seq
+    OWNER TO postgres;
+
+-- SEQUENCE: public.tbl_user_user_id_seq
+
+-- DROP SEQUENCE IF EXISTS public.tbl_user_user_id_seq;
+
+CREATE SEQUENCE IF NOT EXISTS public.tbl_user_user_id_seq
+    INCREMENT 1
+    START 1
+    MINVALUE 1
+    MAXVALUE 2147483647
+    CACHE 1
+    OWNED BY tbl_user.user_id;
+
+ALTER SEQUENCE public.tbl_user_user_id_seq
+    OWNER TO postgres;
+
+-- SEQUENCE: public.tbl_verification_user_id_seq
+
+-- DROP SEQUENCE IF EXISTS public.tbl_verification_user_id_seq;
+
+CREATE SEQUENCE IF NOT EXISTS public.tbl_verification_user_id_seq
+    INCREMENT 1
+    START 1
+    MINVALUE 1
+    MAXVALUE 2147483647
+    CACHE 1
+    OWNED BY tbl_verification.user_id;
+
+ALTER SEQUENCE public.tbl_verification_user_id_seq
+    OWNER TO postgres;
+
+-- SEQUENCE: public.tbl_verification_verification_id_seq
+
+-- DROP SEQUENCE IF EXISTS public.tbl_verification_verification_id_seq;
+
+CREATE SEQUENCE IF NOT EXISTS public.tbl_verification_verification_id_seq
+    INCREMENT 1
+    START 1
+    MINVALUE 1
+    MAXVALUE 2147483647
+    CACHE 1
+    OWNED BY tbl_verification.verification_id;
+
+ALTER SEQUENCE public.tbl_verification_verification_id_seq
+    OWNER TO postgres;
+
+
+
 	
 	
 --------------Script for Tbl_user---------------------
