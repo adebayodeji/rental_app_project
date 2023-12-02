@@ -227,8 +227,6 @@ CREATE SEQUENCE IF NOT EXISTS public.tbl_verification_verification_id_seq
 ALTER SEQUENCE public.tbl_verification_verification_id_seq
     OWNER TO postgres;
 
-
-
 	
 	
 --------------Script for Tbl_user---------------------
