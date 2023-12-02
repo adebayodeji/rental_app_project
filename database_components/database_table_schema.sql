@@ -222,7 +222,7 @@ CREATE TABLE IF NOT EXISTS public.tbl_user
     rating character varying(255),
     "timestamp" time without time zone,
     CONSTRAINT tbl_user_pkey PRIMARY KEY (user_id)
-)
+);
 
 
 --ALTER TABLE IF EXISTS public.tbl_user
@@ -254,8 +254,7 @@ CREATE TABLE IF NOT EXISTS public.tbl_property
         REFERENCES public.tbl_user (user_id) MATCH SIMPLE
         ON UPDATE NO ACTION
         ON DELETE NO ACTION
-)
-
+);
 --TABLESPACE pg_default;
 
 --ALTER TABLE IF EXISTS public.tbl_property
@@ -278,7 +277,7 @@ CREATE TABLE IF NOT EXISTS public.tbl_house_mate
         REFERENCES public.tbl_user (user_id) MATCH SIMPLE
         ON UPDATE NO ACTION
         ON DELETE NO ACTION
-)
+);
 
 --TABLESPACE pg_default;
 
@@ -302,8 +301,7 @@ CREATE TABLE IF NOT EXISTS public.tbl_maintenance
         REFERENCES public.tbl_property (property_id) MATCH SIMPLE
         ON UPDATE NO ACTION
         ON DELETE NO ACTION
-)
-
+);
 --TABLESPACE pg_default;
 
 --ALTER TABLE IF EXISTS public.tbl_maintenance
@@ -330,7 +328,7 @@ CREATE TABLE IF NOT EXISTS public.tbl_rental_agreement
         REFERENCES public.tbl_user (user_id) MATCH SIMPLE
         ON UPDATE NO ACTION
         ON DELETE NO ACTION
-)
+);
 
 --TABLESPACE pg_default;
 
@@ -354,7 +352,7 @@ CREATE TABLE IF NOT EXISTS public.tbl_support
         REFERENCES public.tbl_user (user_id) MATCH SIMPLE
         ON UPDATE NO ACTION
         ON DELETE NO ACTION
-)
+);
 
 --TABLESPACE pg_default;
 
@@ -377,7 +375,7 @@ CREATE TABLE IF NOT EXISTS public.tbl_verification
         REFERENCES public.tbl_user (user_id) MATCH SIMPLE
         ON UPDATE NO ACTION
         ON DELETE NO ACTION
-)
+);
 
 --TABLESPACE pg_default;
 
