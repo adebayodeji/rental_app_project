@@ -20,8 +20,10 @@ export default function RootLayout({
 }) {
   return (
     <html lang="en">
-      <body className={font.className}>{children}</body>
-      <Navbar />
+      <body className={font.className}>
+        {/* <div className="pb-20 pt-28">{children}</div> */}
+        <Navbar />
+      </body>
     </html>
   );
 }
