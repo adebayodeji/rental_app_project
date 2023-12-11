@@ -1,0 +1,86 @@
+generator client {
+  provider = "prisma-client-js"
+}
+
+datasource db {
+  provider = "postgresql"
+  url      = env("DATABASE_URL")
+}
+
+model tbl_house_mate {
+  housemate_id      Int      @id @default(autoincrement())
+  user_id           Int      @default(autoincrement())
+  preferences       String?  @db.VarChar(255)
+  agreement_details String?  @db.VarChar(255)
+  tbl_user          tbl_user @relation(fields: [user_id], references: [user_id], onDelete: NoAction, onUpdate: NoAction, map: "user_id_foreign_key")
+}
+
+model tbl_maintenance {
+  issue_id     Int          @id @default(autoincrement())
+  property_id  Int          @default(autoincrement())
+  description  String?      @db.VarChar(255)
+  status       String?      @db.VarChar(255)
+  tbl_property tbl_property @relation(fields: [property_id], references: [property_id], onDelete: NoAction, onUpdate: NoAction, map: "property_id_foreign_key")
+}
+
+model tbl_property {
+  property_id          Int                    @id @default(autoincrement())
+  property_name        String?                @db.VarChar(255)
+  property_address     String?                @db.VarChar(255)
+  property_type        String?                @db.VarChar(255)
+  rental_price         String?                @db.VarChar(255)
+  property_details     String?                @db.VarChar(255)
+  rental_terms         String?                @db.VarChar(255)
+  property_image       Bytes?
+  additional_bills     String?                @db.VarChar(255)
+  not_allowed          String?                @db.VarChar(255)
+  availability         String?                @db.VarChar(255)
+  user_id              Int                    @default(autoincrement())
+  timestamp            DateTime?              @db.Time(6)
+  tbl_maintenance      tbl_maintenance[]
+  tbl_user             tbl_user               @relation(fields: [user_id], references: [user_id], onDelete: NoAction, onUpdate: NoAction, map: "user_id_foreign_key")
+  tbl_rental_agreement tbl_rental_agreement[]
+}
+
+model tbl_rental_agreement {
+  agreement_id Int          @id @default(autoincrement())
+  user_id      Int          @default(autoincrement())
+  property_id  Int          @default(autoincrement())
+  invoices     String?      @db.VarChar(255)
+  tbl_property tbl_property @relation(fields: [property_id], references: [property_id], onDelete: NoAction, onUpdate: NoAction, map: "property_id_foreign_key")
+  tbl_user     tbl_user     @relation(fields: [user_id], references: [user_id], onDelete: NoAction, onUpdate: NoAction, map: "user_id_foreign_key")
+}
+
+model tbl_support {
+  support_id    Int      @id @default(autoincrement())
+  user_id       Int      @default(autoincrement())
+  issue_details String?  @db.VarChar(255)
+  resolution    String?  @db.VarChar(255)
+  tbl_user      tbl_user @relation(fields: [user_id], references: [user_id], onDelete: NoAction, onUpdate: NoAction, map: "user_id_foreign_key")
+}
+
+model tbl_user {
+  user_id              Int                    @id @default(autoincrement())
+  name                 String?                @db.VarChar(255)
+  email                String?                @db.VarChar(255)
+  contact              String?                @db.VarChar(255)
+  academic_institution String?                @db.VarChar(255)
+  address              String?                @db.VarChar(255)
+  picture              Bytes?
+  user_type            String?                @db.VarChar(255)
+  status               String?                @db.VarChar(255)
+  rating               String?                @db.VarChar(255)
+  timestamp            DateTime?              @db.Time(6)
+  tbl_house_mate       tbl_house_mate[]
+  tbl_property         tbl_property[]
+  tbl_rental_agreement tbl_rental_agreement[]
+  tbl_support          tbl_support[]
+  tbl_verification     tbl_verification[]
+}
+
+model tbl_verification {
+  verification_id Int      @id @default(autoincrement())
+  user_id         Int      @default(autoincrement())
+  verified_status String?  @db.VarChar(255)
+  tbl_user        tbl_user @relation(fields: [user_id], references: [user_id], onDelete: NoAction, onUpdate: NoAction, map: "user_id_foreign_key")
+}
