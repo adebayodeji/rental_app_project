@@ -1,47 +1,47 @@
-"use client";
+'use client';
 
 const Search = () => {
   return (
     <div
-      className="
-            border-[1px]
+      className='
             w-full
-            md:w-auto
-            py-2
-            rounded-full
-            shadow-sm
-            hover:shadow-md
-            transition
             cursor-pointer
-        "
+            rounded-full
+            border-[1px]
+            py-2
+            shadow-sm
+            transition
+            hover:shadow-md
+            md:w-auto
+        '
     >
       <div
-        className="
+        className='
             flex
             flex-row
             items-center
             justify-between
-            "
+            '
       >
         <div
-          className="
+          className='
+            px-6
             text-sm
             font-semibold
-            px-6
-            "
+            '
         >
           Anywhere
         </div>
         <div
-          className="
+          className='
                 hidden
-                sm:block
+                flex-1
+                border-x-[1px]
+                px-6
+                text-center
                 text-sm
                 font-semibold
-                px-6
-                border-x-[1px]
-                flex-1
-                text-center"
+                sm:block'
         >
           Any Week
         </div>
