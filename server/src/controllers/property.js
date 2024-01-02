@@ -1,6 +1,6 @@
-import { z } from 'zod'
-import { PropertySchema } from '../schemas/index'
-import { saveProperty } from '../services/property'
+import { z } from "zod"
+import { PropertySchema } from "../schemas/index"
+import { saveProperty } from "../services/property"
 
 export const createProperty = {
     schema: {
@@ -35,7 +35,7 @@ export const createProperty = {
             reply.status(204).send()
         } catch (error) {
             reply.code(500).send({
-                message: 'Unable to create property',
+                message: "Unable to create property",
             })
         }
     },
@@ -52,12 +52,21 @@ export const getProperty = {
             const propertyData = await getProperty(id)
             if (propertyData) {
                 reply.send(propertyData)
-                return
+                return;
             }
-
             reply
                 .code(404)
                 .send({ message: `Property with id  ${id} doesn't exist` })
-        } catch (error) {}
+        } catch (error) {
+            reply.code(500).send({
+                message: 'Unable to fetch property',
+            })
+        }
     },
+}
+
+export const getAllProperty = {
+    response: {
+        200: Property
+    }
 }
