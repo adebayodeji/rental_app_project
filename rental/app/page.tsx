@@ -1,6 +1,5 @@
 "use client";
-import Pokemon from "./components/Property";
-import Image from "next/image";
+import Pokemon from "./components/Properties/Property";
 import { useInfiniteQuery } from "@tanstack/react-query";
 import { useInView } from "react-intersection-observer";
 import { useEffect } from "react";
@@ -59,8 +58,8 @@ export default function Home() {
   return (
     <main className="flex min-h-screen flex-col items-center justify-between p-24">
       <h2 className="mt-4">Welcome to Brazil!</h2>
-      <div className="md:grid-row-1 m-auto mb-5 mt-5 flex w-full flex-col gap-4 md:grid md:w-10/12 md:grid-cols-3 md:items-center">
-        {pokemons.pages?.map((page) =>
+      <div className="md:grid-row-1 m-auto mb-5 mt-5 flex w-full flex-col gap-4 md:grid md:w-10/12 md:grid-cols-4 md:items-center">
+        {pokemons?.pages?.map((page) =>
           page.map(
             (
               pokemon: {

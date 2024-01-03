@@ -19,10 +19,10 @@ export default function RootLayout({
     <html lang='en'>
       <body className={`${fonts.className} antialiased`}>
       <ReactQueryProvider>
+        <Navbar />
         {children}
         <ReactQueryDevtools />
         </ReactQueryProvider>
-        <Navbar />
       </body>
     </html>
   );
