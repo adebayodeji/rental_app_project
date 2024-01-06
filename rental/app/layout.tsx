@@ -1,17 +1,14 @@
-import type { Metadata } from "next";
-import { Inter, Nunito } from "next/font/google";
-import "./globals.css";
-import Navbar from "./components/partials/Navbar";
-const inter = Inter({ subsets: ["latin"] });
+import type { Metadata } from 'next';
+import { fonts } from '@/app/ui/fonts';
+import ReactQueryProvider from './components/global/ReactQueryProvider';
+import {ReactQueryDevtools} from "@tanstack/react-query-devtools"
+import Navbar from './components/partials/Navbar';
+import './globals.css';
 
 export const metadata: Metadata = {
-  title: "Rwanda Rentals",
-  description: "The number one rental platform in East Africa",
+  title: 'Rwanda Rentals',
+  description: 'The number one rental platform in Africa',
 };
-
-const font = Nunito({
-  subsets: ["latin"],
-});
 
 export default function RootLayout({
   children,
@@ -19,10 +16,13 @@ export default function RootLayout({
   children: React.ReactNode;
 }) {
   return (
-    <html lang="en">
-      <body className={font.className}>
-        {/* <div className="pb-20 pt-28">{children}</div> */}
+    <html lang='en'>
+      <body className={`${fonts.className} antialiased`}>
+      <ReactQueryProvider>
         <Navbar />
+        {children}
+        <ReactQueryDevtools />
+        </ReactQueryProvider>
       </body>
     </html>
   );
