@@ -1,5 +1,5 @@
 "use client";
-import Pokemon from "./components/Properties/Property";
+import PropertyCard from "./components/Properties/PropertyCard";
 import { useInfiniteQuery } from "@tanstack/react-query";
 import { useInView } from "react-intersection-observer";
 import { useEffect } from "react";
@@ -56,40 +56,41 @@ export default function Home() {
   }, [inView, fetchNextPage, hasNextPage]);
 
   return (
-    <main className="flex min-h-screen flex-col items-center justify-between p-24">
-      <h2 className="mt-4">Welcome to Brazil!</h2>
-      <div className="md:grid-row-1 m-auto mb-5 mt-5 flex w-full flex-col gap-4 md:grid md:w-10/12 md:grid-cols-4 md:items-center">
-        {pokemons?.pages?.map((page) =>
-          page.map(
-            (
-              pokemon: {
-                imageUrl: string;
-                name: string;
-              },
-              index: number
-            ) => {
-              if (page.length == index + 1) {
-                return (
-                  <Pokemon
-                    image={pokemon.imageUrl}
-                    name={pokemon.name}
-                    key={index}
-                    innerRef={ref}
-                  />
-                );
-              } else {
-                return (
-                  <Pokemon
-                    image={pokemon.imageUrl}
-                    name={pokemon.name}
-                    key={index}
-                  />
-                );
-              }
-            }
-          )
-        )}
-      </div>
-    </main>
+    <div
+      className="
+            grid
+            grid-cols-1 
+            gap-8 
+            pt-24 
+            sm:grid-cols-2 
+            md:grid-cols-3
+            lg:grid-cols-4
+            xl:grid-cols-4
+            2xl:grid-cols-5
+          "
+    >
+      {pokemons?.pages?.map((page) =>
+        page.map(
+          (
+            property: {
+              imageUrl: string;
+              name: string;
+            },
+            index: number
+          ) => {
+            return (
+              <PropertyCard
+                data={{
+                  image: property.imageUrl,
+                  type: "Dummy property type",
+                  id: index.toString(),
+                }}
+                key={index}
+              />
+            );
+          }
+        )
+      )}
+    </div>
   );
 }
