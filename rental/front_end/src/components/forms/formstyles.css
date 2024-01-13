@@ -1,0 +1,121 @@
+.signup-page {
+    margin-top: 70px;
+}
+
+.login-page {
+    margin-top: 50px;
+}
+
+.form-rows {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    padding: 30px 60px 15px 60px;
+    gap: 20px;
+    border-radius: 10px;
+    background: #FFF;
+}
+
+#form-input {
+    width: 350px;
+    height: 25px;
+    padding: 8px;
+    border-radius: 5px;
+    background: #FFF;
+    border: 1px solid rgba(0, 0, 0, 0.50);
+}
+
+#reg-title {
+    font-size: 25px;
+    font-style: normal;
+    font-weight: 600;
+    line-height: normal;
+    margin: 0;
+}
+
+.reg-btn {
+    width: 370px;
+    padding: 12px;
+    gap: 10px;
+    background: #0C2D55;
+}
+
+.alt-signup{
+    display: flex;
+    gap: 5px;
+    font-size: 15px;
+}
+
+#ins-login {
+    margin: 0;
+}
+
+.alt-reg-cont {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    padding: 15px 60px;
+
+}
+
+#divider {
+    display: flex;
+    flex-direction: row;
+    color: #B3B3B3;
+    margin-top: 0;
+    line-height: 1px;
+}
+  
+#divider:before, #divider:after{
+    content: "";
+    flex: 1 1;
+    border-bottom: 1px solid #B3B3B3;
+    margin: auto;
+}
+  
+#divider:before {
+    margin-right: 10px
+}
+  
+#divider:after {
+    margin-left: 10px
+}
+
+.alt-reg-btn {
+    width: 370px;
+    padding: 12px;
+    background: #FFF;
+    border-radius: 10px;
+    color: #474747;
+    border: 1.5px solid rgba(12, 45, 85, 0.70);
+    margin-bottom: 20px;
+    align-self: center;
+}
+
+#pswd-con {
+    display: flex;
+    flex-direction: column;
+    gap: 5px;
+}
+
+#utils {
+    display: flex;
+    width: 370px;
+    justify-content: space-between;
+}
+
+#essentials {
+    display: flex;
+    align-items: center;
+    font-size: 12px; 
+}
+
+#forgot-password, label {
+    font-size: 12px;
+}
+
+input[type='checkbox'] {
+    accent-color: rgba(12, 45, 85, 0.70);
+    margin-right: 7px;
+}
