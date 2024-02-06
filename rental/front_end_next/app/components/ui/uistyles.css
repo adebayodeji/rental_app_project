@@ -6,7 +6,7 @@
     /* border: 1px solid black; */
 }
 
-#app-name-s, #app-name {
+.app-name-s, .app-name {
     align-self: baseline;
     margin-bottom: 5px;
     line-height: 0px;
@@ -14,10 +14,14 @@
     letter-spacing: 1.5px;
     font-weight: 800;
 }
-#app-name-s {
+.app-name-s {
     margin-left: -2px;
     margin-right: -4px;
     font-size: 22px;
+}
+
+#logo-light {
+    color: white;
 }
 
 header {
@@ -25,6 +29,7 @@ header {
     width: 100%;
     top: 0;
     left: 0;
+    z-index: 5;
 }
 
 .reg-navbar {
@@ -38,16 +43,21 @@ header {
     display: flex;
     gap: 20px;
     /* border: 1px solid black; */
-    align-items: flex-end;
+    align-items: center;
 }
 
 #nav-content > a {
     line-height: normal;
-    margin-bottom: -3px;
     font-size: 15px;
     font-weight: 550;
     letter-spacing: 1px;
 }
+
+#nav-content > button {
+    padding: 7px 15px;
+    background: #0C2D55;
+}
+
 footer {
     position: relative;
     width: 100%;
