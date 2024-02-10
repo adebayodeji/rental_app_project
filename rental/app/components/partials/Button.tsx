@@ -1,5 +1,6 @@
 "use client";
-import Heart from "react-animated-heart";
+import FavoriteIcon from "@mui/icons-material/Favorite";
+import IosShareIcon from "@mui/icons-material/IosShare";
 import { User } from "@/app/types";
 import { IconType } from "react-icons";
 import { useState } from "react";
@@ -16,6 +17,8 @@ interface HeartButtonProps {
   propertyId: string;
   currentUser?: User | null;
 }
+
+interface ShareButtonProps extends Omit<HeartButtonProps, "currentUser"> {}
 
 export const Button: React.FC<ButtonProps> = ({
   label,
@@ -76,9 +79,30 @@ export const HeartButton: React.FC<HeartButtonProps> = ({
         hover:opacity-80
     "
     >
-      <Heart
-        isClick={hasFavorited}
+      <FavoriteIcon
+        fontSize="inherit"
+        className="text-red-600"
         onClick={() => toggleFavorite(!hasFavorited)}
+      />
+    </div>
+  );
+};
+
+export const ShareButton: React.FC<ShareButtonProps> = ({ propertyId }) => {
+  return (
+    <div
+      className="
+        relative
+        cursor-pointer  
+        transition
+        hover:opacity-80
+    "
+    >
+      <IosShareIcon
+        fontSize="inherit"
+        onClick={() => {
+          console.log(`property id is ${propertyId}`);
+        }}
       />
     </div>
   );

@@ -1,5 +1,5 @@
 "use client";
-import PropertyCard from "./components/Properties/PropertyCard";
+import PropertyCard from "./components/properties/PropertyCard";
 import { useInfiniteQuery } from "@tanstack/react-query";
 import { useInView } from "react-intersection-observer";
 import { useEffect } from "react";
@@ -78,16 +78,30 @@ export default function Home() {
             },
             index: number
           ) => {
-            return (
-              <PropertyCard
-                data={{
-                  image: property.imageUrl,
-                  type: "Dummy property type",
-                  id: index.toString(),
-                }}
-                key={index}
-              />
-            );
+            if (page.length == index + 1) {
+              return (
+                <PropertyCard
+                  data={{
+                    image: property.imageUrl,
+                    type: "Dummy property type",
+                    id: index.toString(),
+                  }}
+                  key={index}
+                  innerRef
+                />
+              );
+            } else {
+              return (
+                <PropertyCard
+                  data={{
+                    image: property.imageUrl,
+                    type: "Dummy property type",
+                    id: index.toString(),
+                  }}
+                  key={index}
+                />
+              );
+            }
           }
         )
       )}

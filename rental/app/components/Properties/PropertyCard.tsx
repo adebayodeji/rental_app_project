@@ -22,7 +22,7 @@ const PropertyCard: React.FC<propertyCardProps> = ({
 
   return (
     <div
-      onClick={() => console.log("router.push(`/listings/${data.id}`)")}
+      onClick={() => router.push(`/properties/${data.id}`)}
       className="group col-span-1 cursor-pointer"
     >
       <div className="flex w-full flex-col gap-2">
@@ -38,15 +38,14 @@ const PropertyCard: React.FC<propertyCardProps> = ({
           <Image
             fill
             className="
-                  h-full
-                  w-full 
-                  border 
+                  h-full 
+                  w-full
                   object-cover 
-                  transition 
-                  group-hover:scale-110
+                  transition
+                  group-hover:scale-110 
                 "
             src={data.image}
-            alt="Listing"
+            alt="Property"
           />
           <div
             className="
@@ -55,7 +54,7 @@ const PropertyCard: React.FC<propertyCardProps> = ({
                 top-3
               "
           >
-            <HeartButton propertyId={data.id} currentUser={null} />
+            <HeartButton propertyId={data.id} />
           </div>
         </div>
         <div className="text-lg font-semibold">
