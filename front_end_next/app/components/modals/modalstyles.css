@@ -1,0 +1,43 @@
+.modal {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+    border: 1px solid rgb(189, 188, 188);
+    border-radius: 13px;
+    padding: 10px;
+    box-shadow: 10px;
+    transition: all 0.5s ease-in-out;
+    justify-content: center;
+    overflow: hidden;
+    background-color: white;
+    /* z-index: 999; */
+}
+
+.close-btn {
+    align-self: flex-end;
+    padding: 0px 15px;
+    background-color: transparent;
+}
+
+#close {
+    font-weight: 600;
+    font-size: 40px;
+    margin: 0;
+    color: #4b4d50;
+    /* margin-right: 8px; */
+}
+
+#react-portal-modal {
+    position: fixed;
+    top: 0;
+    left: 0;
+    z-index: 40;
+    height: 100vh;
+    width: 100vw;
+    display: flex;
+    /* place-items: center; */
+    align-items: center;
+    justify-content: center;
+    /* opacity: 50; */
+    background: rgb(104, 103, 103);
+}
