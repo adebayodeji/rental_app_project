@@ -1,18 +1,22 @@
+-- Property type
+CREATE TYPE property_category AS ENUM ("Apartment", "House", "Condo", "Townhouse", "Lake", "Countryside", "Modern","Lux", "Other");
+
+
 -- CreateTable
 CREATE TABLE "tbl_house_mate" (
-    "housemate_id" SERIAL NOT NULL,
-    "user_id" SERIAL NOT NULL,
-    "preferences" VARCHAR(255),
     "agreement_details" VARCHAR(255),
+    "housemate_id" SERIAL NOT NULL,
+    "preferences" VARCHAR(255),
+    "user_id" SERIAL NOT NULL,
 
     CONSTRAINT "tbl_house_mate_pkey" PRIMARY KEY ("housemate_id")
 );
 
 -- CreateTable
 CREATE TABLE "tbl_maintenance" (
+    "description" VARCHAR(255),
     "issue_id" SERIAL NOT NULL,
     "property_id" SERIAL NOT NULL,
-    "description" VARCHAR(255),
     "status" VARCHAR(255),
 
     CONSTRAINT "tbl_maintenance_pkey" PRIMARY KEY ("issue_id")
@@ -20,19 +24,22 @@ CREATE TABLE "tbl_maintenance" (
 
 -- CreateTable
 CREATE TABLE "tbl_property" (
-    "property_id" SERIAL NOT NULL,
-    "property_name" VARCHAR(255),
+    "additional_bills" VARCHAR(255),
+    "availability" VARCHAR(255),
+    "category" property_category,
+    "not_allowed" VARCHAR(255),
     "property_address" VARCHAR(255),
+    "property_description" VARCHAR(255),
+    "property_id" SERIAL NOT NULL,
+    "property_image" BYTEA,
+    "property_name" VARCHAR(255),
     "property_type" VARCHAR(255),
     "rental_price" VARCHAR(255),
-    "property_details" VARCHAR(255),
     "rental_terms" VARCHAR(255),
-    "property_image" BYTEA,
-    "additional_bills" VARCHAR(255),
-    "not_allowed" VARCHAR(255),
-    "availability" VARCHAR(255),
-    "user_id" SERIAL NOT NULL,
     "timestamp" TIME(6),
+    "user_id" SERIAL NOT NULL,
+    "created_at" TIMESTAMP DEFAULT CURRENT_TIMESTAMP, 
+    "updated_at" TIMESTAMP DEFAULT CURRENT_TIMESTAMP, 
 
     CONSTRAINT "tbl_property_pkey" PRIMARY KEY ("property_id")
 );
@@ -40,9 +47,11 @@ CREATE TABLE "tbl_property" (
 -- CreateTable
 CREATE TABLE "tbl_rental_agreement" (
     "agreement_id" SERIAL NOT NULL,
-    "user_id" SERIAL NOT NULL,
-    "property_id" SERIAL NOT NULL,
     "invoices" VARCHAR(255),
+    "property_id" SERIAL NOT NULL,
+    "user_id" SERIAL NOT NULL,
+    "created_at" TIMESTAMP DEFAULT CURRENT_TIMESTAMP, 
+    "updated_at" TIMESTAMP DEFAULT CURRENT_TIMESTAMP, 
 
     CONSTRAINT "tbl_rental_agreement_pkey" PRIMARY KEY ("agreement_id")
 );
@@ -53,23 +62,27 @@ CREATE TABLE "tbl_support" (
     "user_id" SERIAL NOT NULL,
     "issue_details" VARCHAR(255),
     "resolution" VARCHAR(255),
+    "created_at" TIMESTAMP DEFAULT CURRENT_TIMESTAMP, 
+    "updated_at" TIMESTAMP DEFAULT CURRENT_TIMESTAMP, 
 
     CONSTRAINT "tbl_support_pkey" PRIMARY KEY ("support_id")
 );
 
 -- CreateTable
 CREATE TABLE "tbl_user" (
-    "user_id" SERIAL NOT NULL,
-    "name" VARCHAR(255),
-    "email" VARCHAR(255),
-    "contact" VARCHAR(255),
     "academic_institution" VARCHAR(255),
     "address" VARCHAR(255),
+    "contact" VARCHAR(255),
+    "email" VARCHAR(255),
+    "name" VARCHAR(255),
     "picture" BYTEA,
-    "user_type" VARCHAR(255),
-    "status" VARCHAR(255),
     "rating" VARCHAR(255),
-    "timestamp" TIME(6),
+    "status" VARCHAR(255),
+    "user_id" SERIAL NOT NULL,
+    "user_type" VARCHAR(255),
+    "created_at" TIMESTAMP DEFAULT CURRENT_TIMESTAMP, 
+    "updated_at" TIMESTAMP DEFAULT CURRENT_TIMESTAMP, 
+
 
     CONSTRAINT "tbl_user_pkey" PRIMARY KEY ("user_id")
 );
@@ -79,6 +92,8 @@ CREATE TABLE "tbl_verification" (
     "verification_id" SERIAL NOT NULL,
     "user_id" SERIAL NOT NULL,
     "verified_status" VARCHAR(255),
+    "created_at" TIMESTAMP DEFAULT CURRENT_TIMESTAMP, 
+    "updated_at" TIMESTAMP DEFAULT CURRENT_TIMESTAMP, 
 
     CONSTRAINT "tbl_verification_pkey" PRIMARY KEY ("verification_id")
 );
