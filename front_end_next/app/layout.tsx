@@ -3,6 +3,7 @@ import { fonts } from "@/app/components/ui/fonts";
 import ReactQueryProvider from "./components/global/ReactQueryProvider";
 import { ReactQueryDevtools } from "@tanstack/react-query-devtools";
 import "./globals.css";
+import RegNavbar from "./components/ui/RegNavbar";
 
 export const metadata: Metadata = {
   title: "Rwanda Rentals",
@@ -16,7 +17,11 @@ export default function RootLayout({
 }) {
   return (
     <html lang="en">
-      <body className={`${fonts.className} antialiased`}>
+      <body
+        suppressHydrationWarning={true}
+        className={`${fonts.className} antialiased`}
+      >
+        {/* <RegNavbar /> */}
         <ReactQueryProvider>
           {children}
           <ReactQueryDevtools />
