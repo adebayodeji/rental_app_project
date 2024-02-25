@@ -3,6 +3,7 @@ import PropertyCard from "./PropertyCard";
 import { useInfiniteQuery } from "@tanstack/react-query";
 import { useInView } from "react-intersection-observer";
 import { useEffect } from "react";
+import Container from "../partials/Container";
 
 async function getPokemons({ pageParam }: { pageParam: number }) {
   const res = await fetch(
@@ -56,56 +57,59 @@ const PropertiesPage = () => {
   }, [inView, fetchNextPage, hasNextPage]);
 
   return (
-    <div
-      className="
-            grid
-            grid-cols-1 
-            gap-8 
-            pt-24 
-            sm:grid-cols-2 
-            md:grid-cols-3
-            lg:grid-cols-4
-            xl:grid-cols-4
-            2xl:grid-cols-5
+    <Container>
+      <div
+        className="
+          pt-24
+          grid 
+          grid-cols-1 
+          sm:grid-cols-2 
+          md:grid-cols-3 
+          lg:grid-cols-4
+          xl:grid-cols-4
+          2xl:grid-cols-6
+          gap-1
+          w-full
           "
-    >
-      {pokemons?.pages?.map((page) =>
-        page.map(
-          (
-            property: {
-              imageUrl: string;
-              name: string;
-            },
-            index: number
-          ) => {
-            if (page.length == index + 1) {
-              return (
-                <PropertyCard
-                  data={{
-                    image: property.imageUrl,
-                    type: "Dummy property type",
-                    id: index.toString(),
-                  }}
-                  key={index}
-                  innerRef
-                />
-              );
-            } else {
-              return (
-                <PropertyCard
-                  data={{
-                    image: property.imageUrl,
-                    type: "Dummy property type",
-                    id: index.toString(),
-                  }}
-                  key={index}
-                />
-              );
+      >
+        {pokemons?.pages?.map((page) =>
+          page.map(
+            (
+              property: {
+                imageUrl: string;
+                name: string;
+              },
+              index: number
+            ) => {
+              if (page.length == index + 1) {
+                return (
+                  <PropertyCard
+                    data={{
+                      image: property.imageUrl,
+                      type: "Dummy property type",
+                      id: index.toString(),
+                    }}
+                    key={index}
+                    innerRef
+                  />
+                );
+              } else {
+                return (
+                  <PropertyCard
+                    data={{
+                      image: property.imageUrl,
+                      type: "Dummy property type",
+                      id: index.toString(),
+                    }}
+                    key={index}
+                  />
+                );
+              }
             }
-          }
-        )
-      )}
-    </div>
+          )
+        )}
+      </div>
+    </Container>
   );
 };
 

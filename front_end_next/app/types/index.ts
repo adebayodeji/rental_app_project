@@ -6,22 +6,23 @@ export type Account = {
 
 export type Property = {
   address?: string;
+  bathroomCount?: number;
+  coordinates: number[];
   description?: string;
+  guestCount?: number;
   id?: string;
   image?: string;
   name?: string;
   price?: number;
+  roomCount?: number;
   type?: string;
   userId?: string;
-  roomCount?: number;
-  guestCount?: number;
-  bathroomCount?: number;
 };
 
 export type User = {
-  id: string;
-  name: string | null;
   email: string | null;
-  status: boolean | null;
+  id: string;
   image: string;
+  name: string | null;
+  status: boolean | null;
 };

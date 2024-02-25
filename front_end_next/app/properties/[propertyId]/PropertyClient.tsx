@@ -16,8 +16,8 @@ const PropertyClient: React.FC<PropertyClientProps> = ({
 }) => {
   return (
     <Container>
-      <div className="mx-auto max-w-screen-lg">
-        <div className="flex flex-col gap-6">
+      <div className="mx-auto max-w-screen-lg lg:max-w-screen-2xl h-full">
+        <div className="flex flex-col gap-6 h-full">
           <PropertyHead
             name={property.name}
             address={property.address}
@@ -29,11 +29,7 @@ const PropertyClient: React.FC<PropertyClientProps> = ({
         </div>
         <div
           className="
-          mt-6
-          grid
-          grid-cols-1
-          md:grid-cols-7
-          md:gap-10"
+          "
         >
           <PropertyInfo
             user={property.user}
