@@ -45,7 +45,7 @@ const PropertyCard: React.FC<propertyCardProps> = ({
   return (
     <div className="group col-span-1 cursor-pointer p-2 m-1 relative">
       <div className="relative w-full" data-carousel="slide">
-        <div className="relative w-60 h-60 md:h-70 overflow-hidden rounded-lg mb-4">
+        <div className="relative h-[20rem] md:h-70 overflow-hidden rounded-lg mb-4">
           {imageUrls.map((url, index) => (
             <div
               key={index}
@@ -68,7 +68,7 @@ const PropertyCard: React.FC<propertyCardProps> = ({
           <>
             <button
               type="button"
-              className="absolute top-1/2 start-4 z-30 flex items-center justify-center h-10 w-10 bg-black bg-opacity-30 dark:bg-gray-800/30 hover:bg-opacity-50 dark:hover:bg-gray-800/50 rounded-full cursor-pointer group focus:outline-none"
+              className="absolute top-1/2 start-4  flex items-center justify-center h-10 w-10 bg-black bg-opacity-30 dark:bg-gray-800/30 hover:bg-opacity-50 dark:hover:bg-gray-800/50 rounded-full cursor-pointer group focus:outline-none"
               data-carousel-prev
               onClick={prevImage}
             >
@@ -76,7 +76,7 @@ const PropertyCard: React.FC<propertyCardProps> = ({
             </button>
             <button
               type="button"
-              className="absolute top-1/2 end-4 z-30 flex items-center justify-center h-10 w-10 bg-black bg-opacity-30 dark:bg-gray-800/30 hover:bg-opacity-50 dark:hover:bg-gray-800/50 rounded-full cursor-pointer group focus:outline-none"
+              className="absolute top-1/2 end-4  flex items-center justify-center h-10 w-10 bg-black bg-opacity-30 dark:bg-gray-800/30 hover:bg-opacity-50 dark:hover:bg-gray-800/50 rounded-full cursor-pointer group focus:outline-none"
               data-carousel-next
               onClick={nextImage}
             >

@@ -1,26 +1,26 @@
-import './formstyles.css'
+import "./formstyles.css";
 
 function SignUpForm() {
-    return (
-      <div className='signup-page'>
-        <h3 id='reg-title'>Create an account</h3>
-        <form action="">
-          <div className='form-rows'>
-            <input type="text" id='form-input' placeholder='First name'/>
-            <input type='password' id='form-input' placeholder='Last name' />
-            <input type="text" id='form-input' placeholder="E-mail" />
-            <input type="password" id='form-input' placeholder="Password" />
-            <input type="password" id="form-input" placeholder="Re-type password"/>
-            <button className='reg-btn'>Sign up</button>
-            <div className='alt-signup'>
-              <p id='ins-login'>Already have an account?</p>
-              <a href="/users/login">Login</a>
-            </div>
-            
+  return (
+    <div className="signup-page">
+      {/* <h3 id="reg-title">Create an account</h3> */}
+      {/* <form action="">
+        <div className="form-rows">
+          <input type="password" id="form-input" placeholder="Password" />
+          <input
+            type="password"
+            id="form-input"
+            placeholder="Re-type password"
+          />
+          <button className="reg-btn">Sign up</button>
+          <div className="alt-signup">
+            <p id="ins-login">Already have an account?</p>
+            <a href="/users/login">Login</a>
           </div>
-        </form>
-      </div>
-    )
+        </div>
+      </form> */}
+    </div>
+  );
 }
 
-export default SignUpForm
+export default SignUpForm;

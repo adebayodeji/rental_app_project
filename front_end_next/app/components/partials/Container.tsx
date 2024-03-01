@@ -11,9 +11,9 @@ const Container: React.FC<ContainerProps> = ({ children }) => {
       mx-auto
       max-w-[2520px]
       px-4
-      sm:px-2
-      md:px-10
-      xl:px-20
+      sm:px-1
+      md:px-4
+      xl:px-6
       "
     >
       {children}
